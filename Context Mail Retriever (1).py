@@ -84,7 +84,7 @@ df_new.head()
 # saving to database
 def save_embeddings_to_postgres(df, host, dbname, user, password, table_name):
     # Connect to PostgreSQL database
-    conn = psycopg2.connect(host=host, dbname=dbname, user=user, password=password)
+    conn = psycopg2.connect(host= , dbname= , user= , password= , port= )
     cursor = conn.cursor()
 
 
@@ -94,7 +94,7 @@ CREATE TABLE embeddings (
             id PRIMARY KEY, 
             Subject TEXT,
             Body TEXT,
-            combined_text TEXT,  
+            Label TEXT,  
             tokens INTEGER,
             embedding VECTOR(1536)
             );
